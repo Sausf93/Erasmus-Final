@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Nuevo actor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel id="pnlNewActor" header="Nuevo Actor">
+                <p:messages id="msgs"/>
+                <h:panelGrid id="pnlActor" columns="3" cellpadding="5">
+                    <f:facet name="header">
+                        <h:outputText value="Nuevo actor"/>
+                    </f:facet>
+                    <h:outputLabel for="txtFirstName" value="Nombre"/>
+                    <p:inputText id="txtFirstName" value="${actorBean.firstName}" />
+                    <p:message for="txtFirstName" display="icon" />
+                    <h:outputLabel for="txtLastName" value="Apellidos"/>
+                    <p:inputText id="txtLastName" value="${actorBean.lastName}"  />
+                    <p:message for="txtLastName" display="icon" />
+
+                    <p:commandButton value="Save" update="pnlNewActor" action="#{actorBean.save()}"
+                                     icon="ui-icon-check"  />
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>

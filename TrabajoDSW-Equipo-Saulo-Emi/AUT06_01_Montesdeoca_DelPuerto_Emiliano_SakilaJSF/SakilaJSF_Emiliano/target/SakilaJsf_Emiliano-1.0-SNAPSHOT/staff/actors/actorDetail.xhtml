@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Actores</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link  rel="stylesheet" type="text/css"  href="../../css/style.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:dataList class="lista" var="a" value="#{actorBean.getActor()}" type="definition">
+                <f:facet name="header">
+                    Actor insertado
+                </f:facet>
+
+                ID - #{a.actorId}<br/>
+                Nombre -#{a.firstName}<br/>
+                Apellidos - #{a.lastName}
+            </p:dataList>
+        </h:form>
+    </h:body>
+</html>
